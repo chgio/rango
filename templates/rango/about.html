@@ -10,13 +10,18 @@
     <body>
         <h1>Rango says...</h1>
         <div>
-            hey there partner! <br />
-            <strong>{{ boldmessage }}</strong><br />
+            here is the about page. <br />
         </div>
         <div>
+            <a href="/rango/">Index</a><br />
             <a href="/rango/about/">About</a><br />
             <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
+            <img /> tag like <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat." />
         </div>
     </body>
+
+    <footer>
+        <p><i>This tutorial has been put together by Giorgio Ciacchella (<a href="mailto:2481024C@student.gla.ac.uk">2481024C</a>)</i></p>
+    </footer>
 
 </html>
