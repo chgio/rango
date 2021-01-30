@@ -27,7 +27,7 @@ def populate():
         },
         {
             'title': 'Learn Python in 10 Minutes',
-            'url': 'http://www.korokithakis.net/tutorials/python',
+            'url': 'http://www.korokithakis.net/tutorials/python/',
         },
     ]
 
