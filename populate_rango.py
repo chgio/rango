@@ -1,12 +1,12 @@
 import os
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tango_with_django_project.settings')
 
 import django
-
 django.setup()
 
 from rango.models import Category, Page
+
+import random
 
 
 def populate():
@@ -41,16 +41,19 @@ def populate():
             'url': 'http://www.djangorocks.com/'},
         {
             'title': 'How to Tango with Django',
-            'url': 'http://www.tangowithdjango.com/'},
+            'url': 'http://www.tangowithdjango.com/',
+        },
     ]
 
     other_pages = [
         {
             'title': 'Bottle',
-            'url': 'http://bottlepy.org/docs/dev/'},
+            'url': 'http://bottlepy.org/docs/dev/',
+        },
         {
             'title': 'Flask',
-            'url': 'http://flask.pocoo.org'},
+            'url': 'http://flask.pocoo.org',
+        },
     ]
 
     cats = {
@@ -67,7 +70,7 @@ def populate():
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data['views'], cat_data['likes'])
         for p in cat_data['pages']:
-            add_page(c, p['title'], p['url'])
+            add_page(c, p['title'], p['url'], random.randint(1, 100))
 
     # Print out the categories we have added.
     for c in Category.objects.all():
