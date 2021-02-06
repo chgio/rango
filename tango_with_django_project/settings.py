@@ -85,8 +85,16 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password hashing & validation
+#https://docs.djangoproject.com/en/2.2/ref/settings/#password-hashers
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDFSHA1PasswordHasher',
+]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
