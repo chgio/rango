@@ -89,6 +89,8 @@ DATABASES = {
 #https://docs.djangoproject.com/en/2.2/ref/settings/#password-hashers
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
+LOGIN_URL = 'rango:login'
+
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
