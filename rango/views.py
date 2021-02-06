@@ -1,5 +1,7 @@
+import os
 from datetime import datetime as dt
 
+from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -63,8 +65,14 @@ def index(request):
 def about(request):
     visitor_cookie_handler(request)
 
+    images = []
+    for file in os.listdir(settings.MEDIA_ROOT):
+        if file.endswith('.png') or file.endswith('.jpg'):
+            images.append(file)
+
     context_dict = {}
     context_dict['visits'] = request.session['visits']
+    context_dict['images'] = images
 
     return render(request, 'rango/about.html', context=context_dict)
 
